@@ -1,0 +1,29 @@
+{
+  "name": "image-manager",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "_moduleAliases": {
+    "@dto": "src/core/dto",
+    "@usecases": "src/core/usecases",
+    "@services": "src/services",
+    "@routes": "src/routes",
+    "@storage": "src/storage"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "module-alias": "^2.2.3",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0",
+    "zod": "^3.25.20"
+  }
+}

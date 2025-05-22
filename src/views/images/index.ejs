@@ -1,0 +1,45 @@
+<%- include('../layout', { body: `
+<div class="w-full px-4 py-8">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+		${images.map(img => `
+		<div class="bg-white shadow p-4 rounded">
+			<img
+				src="${img.url}"
+				alt="${img.title}"
+				class="w-full h-96 object-cover mb-2 rounded" />
+			<h2 class="text-lg font-semibold">${img.title.toUpperCase()}</h2>
+			<p class="text-sm text-gray-500">${img.date}</p>
+			<form
+				action="/images/delete"
+				method="POST"
+				class="mt-2">
+				<input
+					type="hidden"
+					name="id"
+					value="${img.id}" />
+				<button class="text-lg text-red-500 hover:underline">Eliminar</button>
+			</form>
+			<a
+				href="/images/edit?id=${img.id}"
+				class="text-lg text-blue-500 hover:underline edit-link"
+				data-id="${img.id}"
+				>Editar</a
+			>
+		</div>
+		`).join('')}
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll('.edit-link').forEach((link) => {
+		link.addEventListener('click', (e) => {
+			if (!document.startViewTransition) return;
+
+			e.preventDefault();
+			document.startViewTransition(() => {
+				window.location.href = e.target.href;
+			});
+		});
+	});
+</script>
+` }) %>

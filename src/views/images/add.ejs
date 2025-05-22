@@ -1,0 +1,17 @@
+<%- include('../layout', { body: `
+  <form method="POST" action="/images" class="space-y-4">
+    <div>
+      <label class="block font-medium">Título:</label>
+      <input name="title" maxlength="30" required class="w-full border p-2 rounded" />
+    </div>
+    <div>
+      <label class="block font-medium">URL de la Imagen:</label>
+      <input name="url" type="url" required class="w-full border p-2 rounded" />
+    </div>
+    <div>
+      <label class="block font-medium">Fecha:</label>
+      <input name="date" type="date" required class="w-full border p-2 rounded" />
+    </div>
+    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Guardar</button>
+  </form>
+` }) %>

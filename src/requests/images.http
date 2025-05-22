@@ -1,0 +1,29 @@
+### Show all images
+GET http://localhost:3000/images
+###
+POST http://localhost:3000/images
+Content-Type: application/x-www-form-urlencoded
+
+title=Sunset_View
+&url=https://example.com/sunset.jpg
+&date=2024-05-21
+###
+POST http://localhost:3000/images
+Content-Type: application/x-www-form-urlencoded
+
+title=Duplicate
+&url=https://example.com/sunset.jpg
+&date=2024-05-21
+###
+POST http://localhost:3000/images/update
+Content-Type: application/x-www-form-urlencoded
+
+id=a9ec7a2f-d8a0-4416-852e-4244177c6700
+&title=Updated_Title
+&url=https://example.com/sunset.jpg
+&date=2024-05-22
+###
+POST http://localhost:3000/images/delete
+Content-Type: application/x-www-form-urlencoded
+
+id=a9ec7a2f-d8a0-4416-852e-4244177c6700
